@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flood Relief Effort | Hope Lift</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<style>
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+header {
+  text-align: center;
+  padding: 1rem;
+  background-color: #333;
+  color: white;
+}
+
+.container {
+  flex: 1;
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+
+.campaign-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.campaign-header img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.campaign-info {
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.campaign-info h1 {
+  margin-top: 0;
+}
+
+.donation {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.donation button {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+footer {
+  padding: 1rem;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  margin-top: auto;
+}
+
+
+
+</style>
+<body>
+  <header>
+    <h1>Hope Lift</h1>
+  </header>
+  <div class="container">
+    <div class="campaign-header">
+      <h2>Flood Relief Effort</h2>
+      <img src="media/flood.avif" alt="Flood Relief Effort">
+    </div>
+
+    <div class="campaign-info">
+      <h3>Campaign Details</h3>
+      <p>Aid for communities affected by severe flooding in various regions, providing shelter, food, and medical assistance.</p>
+      <p><strong>Goal Amount:</strong> $100,000</p>
+      <p><strong>Amount Raised:</strong> $65,000</p>
+      <p><strong>Start Date:</strong> October 1, 2024</p>
+      <p><strong>End Date:</strong> December 1, 2024</p>
+    </div>
+
+    <div class="donation">
+      <button onclick="window.location.href='/donate.html'">Donate Now</button>
+    </div>
+  </div>
+  <footer>
+    <p>&copy; 2024 Hope Lift. All rights reserved.</p>
+  </footer>
+</body>
+</html>

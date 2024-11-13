@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enhanced Donor Dashboard</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      background-color: #f0f2f5;
+      padding: 2rem;
+    }
+
+    .dashboard-container {
+      width: 90%;
+      max-width: 1200px;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+    }
+
+    .dashboard-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    .dashboard-header h2 {
+      font-size: 2.2rem;
+      color: #333;
+    }
+
+    .logout-button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      background-color: #FF4D4D;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+
+    .summary-cards {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .summary-card {
+      flex: 1;
+      background-color: #f9fafb;
+      padding: 1.5rem 2rem;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .summary-card .amount {
+      font-size: 2rem;
+      color: #4CAF50;
+      margin-top: 0.5rem;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      color: #333;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 0.5rem;
+    }
+
+    .transactions-table {
+      width: 100%;
+      border-collapse: collapse;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+      margin-top: 1.5rem;
+    }
+
+    .transactions-table thead {
+      background-color: #f8f8f8;
+    }
+
+    .transactions-table th, .transactions-table td {
+      padding: 1.2rem;
+      text-align: left;
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    .transactions-table th {
+      color: #333;
+      font-weight: bold;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .transactions-table tbody tr {
+      transition: background-color 0.2s ease;
+    }
+
+    .transactions-table tbody tr:hover {
+      background-color: #f1f1f1;
+    }
+
+    .recent-activity {
+      margin-top: 2rem;
+      padding: 1rem;
+      background-color: #f9fafb;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .recent-activity-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.8rem 0;
+      font-size: 1rem;
+      color: #555;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .recent-activity-item:last-child {
+      border-bottom: none;
+    }
+
+    .chart-placeholder {
+      margin-top: 2rem;
+      padding: 2rem;
+      background-color: #f9fafb;
+      border-radius: 8px;
+      text-align: center;
+      color: #999;
+      font-size: 1.2rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    }
+  </style>
+</head>
+<body>
+  <div class="dashboard-container">
+    <div class="dashboard-header">
+      <h2><%= name %></h2>
+    
+      <form action="/logout" method="POST" style="display: inline;">
+        <button type="submit" class="logout-button">Logout</button>
+      </form>
+    </div>
+
+    
+    <div class="summary-cards">
+      <div class="summary-card">
+        <div>Total Donated</div>
+        <div class="amount">$5,000</div>
+      </div>
+      <div class="summary-card">
+        <div>Total Transactions</div>
+        <div class="amount">25</div>
+      </div>
+      <div class="summary-card">
+        <div>Top Recipient</div>
+        <div class="amount">Charity A</div>
+      </div>
+    </div>
+
+   
+    <div class="transactions-section">
+      <div class="section-title">Transaction History</div>
+      <table class="transactions-table">
+        <thead>
+          <tr>
+            <th>Transaction ID</th>
+            <th>Date</th>
+            <th>Amount</th>
+            <th>Recipient</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="transaction-id">TRX123456</td>
+            <td class="date">2024-10-01</td>
+            <td class="amount-donated">$100</td>
+            <td>Charity A</td>
+          </tr>
+          <tr>
+            <td class="transaction-id">TRX123457</td>
+            <td class="date">2024-10-15</td>
+            <td class="amount-donated">$250</td>
+            <td>Charity B</td>
+          </tr>
+          <tr>
+            <td class="transaction-id">TRX123458</td>
+            <td class="date">2024-11-05</td>
+            <td class="amount-donated">$300</td>
+            <td>Charity C</td>
+          </tr>
+          <tr>
+            <td class="transaction-id">TRX123459</td>
+            <td class="date">2024-11-09</td>
+            <td class="amount-donated">$150</td>
+            <td>Charity D</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="chart-placeholder">
+      Donation History Chart (Placeholder)
+    </div>
+
+
+    <div class="recent-activity">
+      <div class="section-title">Recent Activity</div>
+      <div class="recent-activity-item">
+        <span>Donation of $250 to Charity B</span>
+        <span>2024-10-15</span>
+      </div>
+      <div class="recent-activity-item">
+        <span>Donation of $300 to Charity C</span>
+        <span>2024-11-05</span>
+      </div>
+      <div class="recent-activity-item">
+        <span>Donation of $150 to Charity D</span>
+        <span>2024-11-09</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
